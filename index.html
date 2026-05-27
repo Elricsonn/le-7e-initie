@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le 7e initié — Elricsonn · Thriller ésotérique</title>
+  <meta name="description" content="Cinq amis, une course-poursuite nocturne, un mourant et quelques mots énigmatiques. Le 7e initié, un thriller ésotérique d'Elricsonn de la Côte d'Azur aux Georgia Guidestones.">
+  <meta name="author" content="Elricsonn">
+
+  <!-- Open Graph / partage réseaux -->
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Le 7e initié — un thriller ésotérique d'Elricsonn">
+  <meta property="og:description" content="En l'espace d'une nuit, leur vie basculera à tout jamais. De la Côte d'Azur à la brume mystique de Bâle, une quête initiatique pour démêler des secrets ancestraux.">
+  <meta property="og:image" content="https://elricsonn.github.io/le-7e-initie/assets/couverture.jpg">
+  <meta property="og:url" content="https://elricsonn.github.io/le-7e-initie/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold:        #c9a84c;
+      --gold-bright: #e3c876;
+      --gold-muted:  #8a6a2a;
+      --gold-dark:   #5a3e1b;
+      --bg:          #000000;
+      --card:        rgba(30, 20, 8, 0.82);
+      --parchment:   #d8c9a6;
+      --parchment-dim:#b6a884;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      background-image: radial-gradient(ellipse at 50% 0%, #1a1407 0%, #000000 60%);
+      background-attachment: fixed;
+      color: var(--parchment);
+      font-family: 'EB Garamond', serif;
+      font-size: 1.12rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    section { padding: 4.5rem 1.5rem; }
+
+    .wrap { max-width: 660px; margin: 0 auto; }
+
+    /* — Ornements & titres — */
+    .ornament {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.8em;
+      color: var(--gold-muted);
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 1.6rem;
+    }
+    .separator {
+      width: 220px; height: 1px; margin: 0 auto;
+      background: linear-gradient(to right, transparent, var(--gold-muted), transparent);
+    }
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 2.2rem;
+    }
+
+    /* — HERO — */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    .cover {
+      width: 300px; max-width: 72vw;
+      border: 1px solid var(--gold-dark);
+      box-shadow: 0 0 60px rgba(201, 168, 76, 0.18), 0 20px 50px rgba(0,0,0,0.7);
+      border-radius: 2px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .cover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 90px rgba(201, 168, 76, 0.32), 0 26px 60px rgba(0,0,0,0.8);
+    }
+    .hero h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-weight: 700;
+      font-size: clamp(2.1rem, 7vw, 3.4rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 0 28px rgba(201, 168, 76, 0.35);
+      margin: 2.2rem 0 0.5rem;
+    }
+    .hero .author {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      color: var(--parchment-dim);
+    }
+    .hero .genre {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-size: 0.62rem;
+      color: var(--gold-muted);
+      margin: 1.4rem 0 1.8rem;
+      font-variant: small-caps;
+    }
+    .tagline {
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--parchment);
+      max-width: 30ch;
+      margin: 0 auto 2.4rem;
+      line-height: 1.5;
+    }
+
+    /* — Boutons — */
+    .btn {
+      display: inline-block;
+      padding: 0.95rem 2.4rem;
+      background: transparent;
+      border: 1px solid var(--gold-dark);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+    }
+    .btn:hover { background: rgba(201, 168, 76, 0.12); border-color: var(--gold); color: var(--gold-bright); }
+    .btn-primary {
+      background: linear-gradient(180deg, rgba(201,168,76,0.16), rgba(201,168,76,0.05));
+      border-color: var(--gold-muted);
+    }
+    .btn-primary:hover { background: rgba(201, 168, 76, 0.22); }
+
+    /* — Résumé — */
+    .recit p { margin-bottom: 1.3rem; }
+    .recit .lead {
+      font-size: 1.32rem;
+      line-height: 1.6;
+      color: #e8ddc4;
+    }
+    .recit .lead::first-letter {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 3.6rem;
+      float: left;
+      line-height: 0.8;
+      padding: 0.25rem 0.6rem 0 0;
+      color: var(--gold);
+    }
+    .closing {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--gold);
+      margin-top: 2.4rem;
+    }
+
+    /* — Univers — */
+    .univers { background: rgba(255,255,255,0.012); }
+    .voyage {
+      display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+      gap: 0.5rem 0.9rem; margin: 0 auto 2.6rem; max-width: 600px;
+      font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--parchment-dim);
+    }
+    .voyage .step { white-space: nowrap; }
+    .voyage .arrow { color: var(--gold-dark); }
+    .comp {
+      text-align: center; font-style: italic; color: var(--parchment-dim);
+      max-width: 44ch; margin: 0 auto;
+    }
+    .comp strong { color: var(--gold); font-style: normal; font-weight: 500; }
+
+    /* — Formats — */
+    .formats { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2.6rem; }
+    .format-card {
+      border: 1px solid var(--gold-dark);
+      background: var(--card);
+      padding: 1.4rem 1.6rem;
+      min-width: 150px; text-align: center;
+    }
+    .format-card .fmt {
+      font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
+    }
+    .format-card .fmt-note { font-size: 0.92rem; color: var(--parchment-dim); font-style: italic; }
+    .center { text-align: center; }
+
+    /* — Avis (sollicitation) — */
+    .avis { background: rgba(255,255,255,0.012); }
+    .avis p { text-align: center; max-width: 46ch; margin: 0 auto 2rem; color: var(--parchment-dim); }
+
+    /* — Auteur — */
+    .auteur p { text-align: center; max-width: 50ch; margin: 0 auto 1rem; }
+
+    /* — Footer — */
+    footer {
+      text-align: center; padding: 3.5rem 1.5rem 4rem;
+      border-top: 1px solid var(--gold-dark);
+      font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.16em;
+      color: var(--gold-muted);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { color: var(--gold-bright); }
+    footer .meta { margin-top: 1.2rem; font-size: 0.62rem; color: var(--gold-dark); letter-spacing: 0.12em; line-height: 2; }
+    .footer-ornament { color: var(--gold-dark); font-size: 1rem; margin-bottom: 1.6rem; }
+
+    /* — Apparition au scroll — */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="ornament">✦ ✦ ✦</div>
+    <img class="cover" src="assets/couverture.jpg" alt="Couverture du roman Le 7e initié d'Elricsonn">
+    <h1>Le 7e initié</h1>
+    <p class="author">Elricsonn</p>
+    <p class="genre">— Thriller ésotérique —</p>
+    <p class="tagline">En l'espace d'une nuit, leur vie basculera à tout jamais.</p>
+    <a class="btn btn-primary" href="https://www.amazon.fr/dp/B0D47VNLK6" target="_blank" rel="noopener">Lire sur Amazon</a>
+  </section>
+
+  <!-- ===== LE RÉCIT ===== -->
+  <section class="recit">
+    <div class="wrap">
+      <div class="ornament reveal">✦</div>
+      <h2 class="reveal">Le récit</h2>
+      <p class="lead reveal">Alphonse, Jean-Baptiste, Nadège, Olivier et Tania : cinq amis unis par leur passion des jeux de rôles et les plaisirs de la table que rien ne prédestinait à devenir des héros. Une course-poursuite nocturne aux conséquences fatales, un mourant confiant quelques mots énigmatiques. En l'espace d'une nuit, leur vie basculera à tout jamais.</p>
+      <p class="reveal">De la Côte d'Azur à la brume mystique de Bâle, de la sérénité du Pas-de-Calais à l'effervescence surnaturelle des Georgia Guidestones, ils plongent dans une enquête périlleuse qui les dépasse totalement. Confrontés à des forces obscures, ils sont entraînés dans une quête mystique pour démêler des secrets ancestraux qui pourraient menacer l'humanité.</p>
+      <p class="reveal">« Le 7e Initié » n'est pas seulement un thriller ésotérique captivant, c'est un voyage de l'esprit qui stimulera votre intellect tout en mettant à l'épreuve votre sagacité. Devenez acteur aux côtés de nos héros, partagez avec eux l'initiation à des secrets séculaires et des traditions occultes, enrichissant ainsi votre compréhension de ces mystères. Chaque page tournée est une étape vers un savoir plus profond, chaque chapitre est un pas sur le chemin de la connaissance, chaque secret dévoilé, une pièce du puzzle qui mène à la vérité ultime.</p>
+      <p class="reveal">Embarquez dans une aventure qui vous tiendra en haleine jusqu'à la dernière page, qui marquera votre esprit et enrichira votre soif de savoir. Avec « Le 7e Initié », la lecture n'est pas passive : vous devenez partie intégrante de la quête, vous partagez le risque, le frisson, l'apprentissage.</p>
+      <p class="closing reveal">Oseriez-vous suivre ces aventuriers dans leur quête de vérité ?</p>
+    </div>
+  </section>
+
+  <!-- ===== L'UNIVERS ===== -->
+  <section class="univers">
+    <div class="wrap">
+      <div class="separator reveal"></div>
+      <h2 class="reveal" style="margin-top:2.6rem;">L'itinéraire initiatique</h2>
+      <div class="voyage reveal">
+        <span class="step">Côte d'Azur</span><span class="arrow">✦</span>
+        <span class="step">Bâle</span><span class="arrow">✦</span>
+        <span class="step">Pas-de-Calais</span><span class="arrow">✦</span>
+        <span class="step">Georgia Guidestones</span>
+      </div>
+      <p class="comp reveal">Pour les lecteurs de <strong>Giacometti &amp; Ravenne</strong> et les amateurs du <strong>Da Vinci Code</strong> — complots, sociétés secrètes et vérités bien réelles du monde dans lequel nous vivons.</p>
+    </div>
+  </section>
+
+  <!-- ===== FORMATS ===== -->
+  <section class="formats-section">
+    <div class="wrap">
+      <h2 class="reveal">Disponible en trois formats</h2>
+      <div class="formats reveal">
+        <div class="format-card"><div class="fmt">Kindle</div><div class="fmt-note">Lecture numérique</div></div>
+        <div class="format-card"><div class="fmt">Broché</div><div class="fmt-note">Noir &amp; blanc</div></div>
+        <div class="format-card"><div class="fmt">Relié</div><div class="fmt-note">Couleur, à prix coûtant</div></div>
+      </div>
+      <p class="center reveal"><a class="btn btn-primary" href="https://www.amazon.fr/dp/B0D47VNLK6" target="_blank" rel="noopener">Acheter sur Amazon</a></p>
+    </div>
+  </section>
+
+  <!-- ===== AVIS (sollicitation) ===== -->
+  <section class="avis">
+    <div class="wrap">
+      <div class="ornament reveal">✦</div>
+      <h2 class="reveal">Vous l'avez lu ?</h2>
+      <p class="reveal">Chaque avis aide un nouveau lecteur à franchir le seuil. Si <em>Le 7e initié</em> vous a accompagné, partagez votre ressenti — quelques lignes suffisent.</p>
+      <p class="center reveal"><a class="btn" href="https://www.amazon.fr/dp/B0D47VNLK6" target="_blank" rel="noopener">Laisser un avis sur Amazon</a></p>
+    </div>
+  </section>
+
+  <!-- ===== AUTEUR ===== -->
+  <section class="auteur">
+    <div class="wrap">
+      <div class="separator reveal"></div>
+      <h2 class="reveal" style="margin-top:2.6rem;">L'auteur</h2>
+      <!-- TODO Pascal : remplacer par ta vraie bio -->
+      <p class="reveal">Elricsonn signe avec <em>Le 7e initié</em> un premier roman né d'une passion pour les mystères, les traditions occultes et les grandes énigmes de l'Histoire — et de longues soirées autour d'une table de jeu de rôles entre amis.</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-ornament">✦</div>
+    <a href="https://www.amazon.fr/dp/B0D47VNLK6" target="_blank" rel="noopener">Le 7e initié sur Amazon</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.facebook.com/elricsonn.auteur" target="_blank" rel="noopener">Facebook</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.instagram.com/elricsonn.auteur" target="_blank" rel="noopener">Instagram</a>
+    &nbsp;·&nbsp;
+    <a href="https://elricsonn.github.io">Portail</a>
+    <div class="meta">
+      ISBN 979-10-415-1601-8<br>
+      © Elricsonn — Tous droits réservés
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
