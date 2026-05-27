@@ -164,11 +164,12 @@
     }
     .recit .lead::first-letter {
       font-family: 'Cinzel Decorative', serif;
-      font-size: 3.6rem;
+      font-size: 4.6rem;
       float: left;
-      line-height: 0.8;
-      padding: 0.25rem 0.6rem 0 0;
+      line-height: 0.72;
+      padding: 0.3rem 0.7rem 0 0;
       color: var(--gold);
+      text-shadow: 0 0 22px rgba(201, 168, 76, 0.4);
     }
     .closing {
       text-align: center;
@@ -201,7 +202,16 @@
       background: var(--card);
       padding: 1.4rem 1.6rem;
       min-width: 150px; text-align: center;
+      text-decoration: none; color: inherit; display: block;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s, background 0.3s;
     }
+    .format-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.10);
+      box-shadow: 0 0 30px rgba(201, 168, 76, 0.18);
+    }
+    .format-card:hover .fmt { color: var(--gold-bright); }
     .format-card .fmt {
       font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
@@ -251,7 +261,6 @@
   <section class="recit">
     <div class="wrap">
       <div class="ornament reveal">✦</div>
-      <h2 class="reveal">Le récit</h2>
       <p class="lead reveal">Alphonse, Jean-Baptiste, Nadège, Olivier et Tania : cinq amis unis par leur passion des jeux de rôles et les plaisirs de la table que rien ne prédestinait à devenir des héros. Une course-poursuite nocturne aux conséquences fatales, un mourant confiant quelques mots énigmatiques. En l'espace d'une nuit, leur vie basculera à tout jamais.</p>
       <p class="reveal">De la Côte d'Azur à la brume mystique de Bâle, de la sérénité du Pas-de-Calais à l'effervescence surnaturelle des Georgia Guidestones, ils plongent dans une enquête périlleuse qui les dépasse totalement. Confrontés à des forces obscures, ils sont entraînés dans une quête mystique pour démêler des secrets ancestraux qui pourraient menacer l'humanité.</p>
       <p class="reveal">« Le 7e Initié » n'est pas seulement un thriller ésotérique captivant, c'est un voyage de l'esprit qui stimulera votre intellect tout en mettant à l'épreuve votre sagacité. Devenez acteur aux côtés de nos héros, partagez avec eux l'initiation à des secrets séculaires et des traditions occultes, enrichissant ainsi votre compréhension de ces mystères. Chaque page tournée est une étape vers un savoir plus profond, chaque chapitre est un pas sur le chemin de la connaissance, chaque secret dévoilé, une pièce du puzzle qui mène à la vérité ultime.</p>
@@ -264,7 +273,7 @@
   <section class="univers">
     <div class="wrap">
       <div class="separator reveal"></div>
-      <h2 class="reveal" style="margin-top:2.6rem;">L'itinéraire initiatique</h2>
+      <h2 class="reveal" style="margin-top:2.6rem;">Un itinéraire initiatique</h2>
       <div class="voyage reveal">
         <span class="step">Côte d'Azur</span><span class="arrow">✦</span>
         <span class="step">Bâle</span><span class="arrow">✦</span>
@@ -280,11 +289,10 @@
     <div class="wrap">
       <h2 class="reveal">Disponible en trois formats</h2>
       <div class="formats reveal">
-        <div class="format-card"><div class="fmt">Kindle</div><div class="fmt-note">Lecture numérique</div></div>
-        <div class="format-card"><div class="fmt">Broché</div><div class="fmt-note">Noir &amp; blanc</div></div>
-        <div class="format-card"><div class="fmt">Relié</div><div class="fmt-note">Couleur, à prix coûtant</div></div>
+        <a class="format-card" href="https://amzn.eu/d/0el2aPO5" target="_blank" rel="noopener"><div class="fmt">Kindle</div><div class="fmt-note">Lecture numérique</div></a>
+        <a class="format-card" href="https://amzn.eu/d/0iWhM9ba" target="_blank" rel="noopener"><div class="fmt">Broché</div><div class="fmt-note">Noir &amp; blanc</div></a>
+        <a class="format-card" href="https://amzn.eu/d/0bIj7FCk" target="_blank" rel="noopener"><div class="fmt">Relié</div><div class="fmt-note">Couleur, à prix coûtant</div></a>
       </div>
-      <p class="center reveal"><a class="btn btn-primary" href="https://www.amazon.fr/dp/B0D47VNLK6" target="_blank" rel="noopener">Acheter sur Amazon</a></p>
     </div>
   </section>
 
@@ -294,7 +302,7 @@
       <div class="ornament reveal">✦</div>
       <h2 class="reveal">Vous l'avez lu ?</h2>
       <p class="reveal">Chaque avis aide un nouveau lecteur à franchir le seuil. Si <em>Le 7e initié</em> vous a accompagné, partagez votre ressenti — quelques lignes suffisent.</p>
-      <p class="center reveal"><a class="btn" href="https://www.amazon.fr/dp/B0D47VNLK6" target="_blank" rel="noopener">Laisser un avis sur Amazon</a></p>
+      <p class="center reveal"><a class="btn" href="https://www.amazon.fr/7e-initi%C3%A9-Elricsonn/dp/B0D3Y9DV12/ref=tmm_pap_swatch_0#averageCustomerReviewsAnchor" target="_blank" rel="noopener">Laissez un avis</a></p>
     </div>
   </section>
 
