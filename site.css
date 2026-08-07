@@ -1,0 +1,167 @@
+/* ── LE 7E INITIÉ — spécifique au site ───────────────────────────
+   Page de présentation du roman. La palette, les polices et le
+   rythme viennent de ds/. Ne reste ici que ce qui est propre à
+   une page de livre : la couverture, la lettrine, l'itinéraire,
+   les formats, l'apparition au défilement.
+
+   Ce site était le plus éloigné de la charte : or #c9a84c,
+   EB Garamond, fond noir pur. Il rejoint --or, Crimson Text et
+   le brun-nuit. Sa dramaturgie propre est conservée.
+   ─────────────────────────────────────────────────────────────── */
+
+section { padding: var(--sp-8) var(--sp-5); }
+.wrap { max-width: 660px; margin-inline: auto; }
+
+/* Ouverture ------------------------------------------------------- */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--sp-3);
+  text-align: center;
+  padding-block: var(--sp-6);
+}
+.couverture {
+  width: auto; max-width: min(460px, 88vw); max-height: 52vh;
+  border: 1px solid var(--or-profond);
+  border-radius: 2px;
+  box-shadow: var(--lueur-titre), 0 20px 50px rgba(0, 0, 0, 0.7);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.couverture:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 90px rgba(212, 168, 75, 0.3), 0 26px 60px rgba(0, 0, 0, 0.8);
+}
+.hero-titre {
+  font-family: var(--font-orne);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 7vw, 3.4rem);
+  letter-spacing: 0.12em;
+  text-indent: 0.12em;
+  text-transform: uppercase;
+  color: var(--or);
+  text-shadow: var(--lueur-titre);
+  margin: 0;
+}
+.hero-auteur {
+  font-family: var(--font-titre);
+  font-size: 0.85rem;
+  letter-spacing: 0.4em; text-indent: 0.4em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+}
+.hero-genre {
+  font-family: var(--font-titre);
+  font-size: 0.68rem;
+  letter-spacing: 0.3em; text-indent: 0.3em;
+  text-transform: uppercase;
+  color: var(--texte-meta);
+}
+.hero-accroche {
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  max-width: 30ch;
+  margin-inline: auto;
+}
+
+/* Le récit -------------------------------------------------------- */
+.recit p { margin-bottom: var(--sp-4); }
+.recit .chapo {
+  font-size: 1.32rem;
+  line-height: 1.6;
+  color: #f0e6d2;
+}
+.recit .chapo::first-letter {
+  font-family: var(--font-orne);
+  font-size: 4.6rem;
+  float: left;
+  line-height: 0.72;
+  padding: 0.3rem 0.7rem 0 0;
+  color: var(--or);
+  text-shadow: var(--lueur-titre);
+}
+.chute {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--or);
+  margin-top: var(--sp-6);
+}
+
+/* L'itinéraire ---------------------------------------------------- */
+.voyage {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: var(--sp-2) var(--sp-4);
+  max-width: 600px;
+  margin: 0 auto var(--sp-6);
+  font-family: var(--font-titre);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em; text-indent: 0.18em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+}
+.voyage .etape { white-space: nowrap; }
+.voyage .lien-orn { color: var(--or-fonce); }
+.parente {
+  text-align: center; font-style: italic;
+  color: var(--texte-doux);
+  max-width: 44ch; margin-inline: auto;
+}
+.parente strong { color: var(--or); font-style: normal; font-weight: 500; }
+
+/* Les formats ----------------------------------------------------- */
+.formats {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+.format {
+  display: block; min-width: 150px; padding: var(--sp-5);
+  text-align: center; text-decoration: none;
+  border: 1px solid var(--or-profond);
+  background: var(--fond-panneau);
+  transition: transform var(--t), border-color var(--t), background var(--t), box-shadow var(--t);
+}
+.format:hover {
+  transform: translateY(-5px);
+  border-color: var(--or);
+  background: var(--fond-survol);
+  box-shadow: var(--lueur);
+}
+.format-nom {
+  font-family: var(--font-titre);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em; text-indent: 0.18em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: var(--sp-1);
+}
+.format:hover .format-nom { color: var(--or-clair); }
+.format-note { font-size: 0.92rem; font-style: italic; color: var(--texte-doux); }
+
+.centre { text-align: center; }
+.section-douce { background: rgba(212, 168, 75, 0.02); }
+.avis p, .auteur p { text-align: center; max-width: 48ch; margin: 0 auto var(--sp-5); }
+
+/* Pied ------------------------------------------------------------ */
+.pied-liens {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-4);
+  font-family: var(--font-titre);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em; text-indent: 0.16em;
+}
+.pied-legal {
+  margin-top: var(--sp-5);
+  font-family: var(--font-titre);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em; text-indent: 0.12em;
+  line-height: 2;
+  color: var(--texte-meta);
+}
+
+/* Apparition au défilement ---------------------------------------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+/* À l'impression, rien ne défile : sans ce garde-fou, le PDF ne
+   contient que la couverture et 2700px de vide. */
+@media print { .reveal { opacity: 1 !important; transform: none !important; } }
