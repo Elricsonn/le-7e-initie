@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie — Le 7e initié · Elricsonn</title>
+  <meta name="description" content="L'ouvrage en images : la couverture, le relié couleur, les premières et quatrièmes de couverture du roman Le 7e initié d'Elricsonn.">
+  <meta name="author" content="Elricsonn">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="ds/styles.css">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+  <header class="entete">
+    <div class="entete-inner contenu contenu-large">
+      <a class="logo" href="index.html">Le 7e initié</a>
+      <nav class="nav">
+        <a href="index.html">Le roman</a>
+        <a href="galerie.html" aria-current="page">Galerie</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="contenu contenu-large">
+      <h1 class="section-titre">L'ouvrage en images</h1>
+      <div class="recit"><p class="chapo centre">Le relié couleur, imprimé à prix coûtant, photographié à sa sortie en mai 2024.</p></div>
+
+      <div class="mondrian">
+        <button type="button" class="mo-item mo-a1" data-src="assets/galerie/1.jpg" aria-label="Agrandir : La couverture du roman"><img src="assets/galerie/1.jpg" alt="La couverture du roman" loading="lazy"></button>
+        <button type="button" class="mo-item mo-a2" data-src="assets/galerie/2.jpg" aria-label="Agrandir : L'ouvrage, première de couverture"><img src="assets/galerie/2.jpg" alt="L'ouvrage, première de couverture" loading="lazy"></button>
+        <button type="button" class="mo-item mo-a3" data-src="assets/galerie/3.jpg" aria-label="Agrandir : L'ouvrage en main"><img src="assets/galerie/3.jpg" alt="L'ouvrage en main" loading="lazy"></button>
+        <button type="button" class="mo-item mo-a4" data-src="assets/galerie/4.jpg" aria-label="Agrandir : La couverture en gros plan"><img src="assets/galerie/4.jpg" alt="La couverture en gros plan" loading="lazy"></button>
+        <button type="button" class="mo-item mo-a5" data-src="assets/galerie/5.jpg" aria-label="Agrandir : Détail de la couverture"><img src="assets/galerie/5.jpg" alt="Détail de la couverture" loading="lazy"></button>
+        <button type="button" class="mo-item mo-a6" data-src="assets/galerie/6.jpg" aria-label="Agrandir : Le livre ouvert"><img src="assets/galerie/6.jpg" alt="Le livre ouvert" loading="lazy"></button>
+        <button type="button" class="mo-item mo-a7" data-src="assets/galerie/7.jpg" aria-label="Agrandir : Première et quatrième de couverture"><img src="assets/galerie/7.jpg" alt="Première et quatrième de couverture" loading="lazy"></button>
+        <button type="button" class="mo-item mo-a8" data-src="assets/galerie/8.jpg" aria-label="Agrandir : L'ouvrage relié"><img src="assets/galerie/8.jpg" alt="L'ouvrage relié" loading="lazy"></button>
+        <div class="mo-bloc mo-c1"></div>
+        <div class="mo-bloc mo-c2"></div>
+        <div class="mo-bloc mo-c3"></div>
+      </div>
+
+      <p class="centre"><a class="btn" href="index.html">Revenir au roman</a></p>
+    </div>
+  </section>
+
+  <footer class="pied">
+    <div class="ornement">&#10022;</div>
+    <div class="pied-liens">
+      <a href="https://www.amazon.fr/dp/B0D47VNLK6" target="_blank" rel="noopener">Le 7e initié sur Amazon</a>
+      <a href="https://www.facebook.com/elricsonn.auteur" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/elricsonn/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="pied-legal">
+      ISBN 979-10-415-1601-8<br>
+      &copy; Elricsonn &mdash; Tous droits réservés
+    </div>
+  </footer>
+
+  <div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Photo agrandie" hidden>
+    <button type="button" class="visionneuse-fermer" id="visionneuse-fermer" aria-label="Fermer">&times;</button>
+    <button type="button" class="visionneuse-nav visionneuse-prec" id="visionneuse-prec" aria-label="Photo précédente">&#8249;</button>
+    <button type="button" class="visionneuse-nav visionneuse-suiv" id="visionneuse-suiv" aria-label="Photo suivante">&#8250;</button>
+    <img id="visionneuse-img" src="" alt="">
+  </div>
+
+  <script>
+    (function () {
+      const boite = document.getElementById('visionneuse');
+      const img = document.getElementById('visionneuse-img');
+      const fermer = document.getElementById('visionneuse-fermer');
+      const prec = document.getElementById('visionneuse-prec');
+      const suiv = document.getElementById('visionneuse-suiv');
+      const vignettes = Array.prototype.slice.call(document.querySelectorAll('.mo-item'));
+      let courante = 0;
+
+      function montrer(i) {
+        courante = (i + vignettes.length) % vignettes.length;
+        const b = vignettes[courante];
+        img.src = b.dataset.src;
+        img.alt = b.querySelector('img').alt;
+      }
+
+      vignettes.forEach(function (b, i) {
+        b.addEventListener('click', function () {
+          montrer(i);
+          boite.hidden = false;
+          document.body.style.overflow = 'hidden';
+          fermer.focus();
+        });
+      });
+
+      prec.addEventListener('click', function () { montrer(courante - 1); });
+      suiv.addEventListener('click', function () { montrer(courante + 1); });
+
+      function refermer() {
+        boite.hidden = true;
+        img.src = '';
+        document.body.style.overflow = '';
+        vignettes[courante].focus();
+      }
+      fermer.addEventListener('click', refermer);
+      boite.addEventListener('click', function (e) { if (e.target === boite) refermer(); });
+      document.addEventListener('keydown', function (e) {
+        if (boite.hidden) return;
+        if (e.key === 'Escape') refermer();
+        if (e.key === 'ArrowLeft') montrer(courante - 1);
+        if (e.key === 'ArrowRight') montrer(courante + 1);
+      });
+    })();
+  </script>
+
+</body>
+</html>
